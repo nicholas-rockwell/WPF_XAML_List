@@ -5,25 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Practice"
         mc:Ignorable="d"
-        Title="Names" Height="180" Width="260">
+        Title="Fourth Coffee" TextBlock.TextAlignment="Center" Height="318" Width="455">
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="80">
+            </RowDefinition>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="170"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <TextBox x:Name="orderSummary" SelectionChanged="orderSummary_SelectionChanged" Grid.Column="1" HorizontalAlignment="Left" Margin="100,99,0,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Height="49" SelectionTextBrush="Black" BorderBrush="White"/>
 
-        <Label>Names</Label>
-        <ListBox Grid.Row="1" x:Name="firstNames"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
-            <TextBox x:Name="txtName"/>
-            <Button x:Name="btnAdd" Margin="0,5,0,0" Click="ButtonAddName_Click">Add Name</Button>
-        </StackPanel>
+        <TextBox HorizontalAlignment="Left" Height="19" Text="Type of Coffee:" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="12" Margin="35,21,0,0" BorderBrush="White"/>
+        <ComboBox x:Name="comboSelection" Margin="10,40,22,21" BorderBrush="White">
+            <ComboBoxItem Content="Latte"/>
+            <ComboBoxItem Content="Capuccino"/>
+            <ComboBoxItem Content="Americano"/>
+            <ComboBoxItem Content="Espresso"/>
+            <ComboBoxItem Content="Machiato"/>
+        </ComboBox>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="37,36,0,0" Text="Size:" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" Height="19" FontWeight="Bold" BorderBrush="White"/>
+        <CheckBox x:Name="sugarButton" Content="Sugar" Grid.Column="1" HorizontalAlignment="Left" Margin="138,24,0,0" Grid.Row="1" VerticalAlignment="Top" Width="64" Height="23"/>
+        <CheckBox x:Name="creamButton" Content="Cream" Grid.Column="1" HorizontalAlignment="Left" Margin="64,24,0,0" Grid.Row="1" VerticalAlignment="Top" Width="68" Height="23" RenderTransformOrigin="0.467,0.306"/>
+
+        <Button x:Name="coffeeButton" Content="Order Coffee" Grid.Column="1" HorizontalAlignment="Left" Margin="10,153,0,0" Grid.Row="1" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.465,0.303"/>
+
+
+        <RadioButton x:Name="sizeSmall" GroupName="size" Content="Small" Grid.Column="1" HorizontalAlignment="Left" Margin="71,38,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="sizeMedium" GroupName="size" Content="Medium" Grid.Column="1" HorizontalAlignment="Left" Margin="124,38,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="sizeLarge" GroupName="size" Content="Large" Grid.Column="1" HorizontalAlignment="Left" Margin="192,38,0,0" VerticalAlignment="Top" Width="56"/>
+        <Label Grid.Column="1" Margin="78,70,17,54" Grid.Row="1" FontWeight="Bold" Content="Order Summary:"/>
+
+
 
     </Grid>
 </Window>

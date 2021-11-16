@@ -27,18 +27,76 @@ namespace Practice
 
 
         }
-
-        private void ButtonAddName_Click(object sender, RoutedEventArgs e)
+        string coffee;
+        string size;
+        private string ComboSelection(string drink, SelectionChangedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtName.Text) && !firstNames.Items.Contains(txtName.Text))
+
+            // Add "using Windows.UI;" for Color and Colors.
+            string drinkName = drink;
+            switch (drinkName)
             {
-                firstNames.Items.Add(txtName.Text);
-                txtName.Clear();
+                case "Latte":
+                    drink = "Latte";
+                    break;
+                case "Capuccino":
+                    drink = "Capuccino";
+                    break;
+                case "Americano":
+                    drink = "Americano";
+                    break;
+                case "Espresso":
+                    drink = "Espresso";
+                    break;
             }
-            else if (string.IsNullOrWhiteSpace(txtName.Text))
-            {
-                Debug.WriteLine("A name was not entered");
-            }
+            coffee = drink;
+            return coffee;
         }
+
+        private string HandleCheck(object sender, RoutedEventArgs e)
+        {
+            size = "small";
+            return size;
+        }
+
+        private void orderSummary_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            string text = "";
+            text += coffee;
+            text += size;
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        //{
+
+        //}
+
+        //private void ButtonAddName_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (!string.IsNullOrWhiteSpace(txtName.Text) && !firstNames.Items.Contains(txtName.Text))
+        //    {
+        //        firstNames.Items.Add(txtName.Text);
+        //        txtName.Clear();
+        //    }
+        //    else if (string.IsNullOrWhiteSpace(txtName.Text))
+        //    {
+        //        Debug.WriteLine("A name was not entered");
+        //    }
+        //}
     }
 }
